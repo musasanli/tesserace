@@ -1,6 +1,7 @@
     canvas {
-      float: left;
-      background-color: #888;
+      background-color: #dedddd;
+      border-radius: 10px;
+      box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
     }
 
     img.hidden {
@@ -29,7 +30,7 @@
       position: absolute;
       left: 0;
       top: 0;
-      width: 512px;
+      width: 700px;
       height: 512px;
       text-align: center;
       vertical-align: middle;
@@ -51,11 +52,18 @@
 
     #container-left {
       width: 50%;
-      position: absolute;
-      top: 0;
-      left: 0;
+      position: fixed;
+      top: 50;
+      left: 50;
       border: 0;
       padding-top: 23px;
+    }
+
+    .canvasDiv {
+      position: relative; 
+      top: 0; 
+      left: 0; 
+      margin-top: 20px;
     }
 
     #container-right {
