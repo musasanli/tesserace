@@ -18,22 +18,17 @@
   <!-- END Can be ordered operations -->
 </head>
 <body>
-  <div id="container">
-    <div style="text-align: center;">
-      <h1>Tesserace 3D Path Tracing Test</h1>
+  <div id="main-container">
+    <div id="container-left">
+
+      <div style="position: relative; top: 0; left: 0; margin-top: 20px;">
+       <canvas id="canvas" width="512" height="512"></canvas>
+        <div id="statusContainer"><span id="status">Loading ...</span></div>
+      </div>
+
     </div>
 
-    <div style="font-size: 16px; margin: 0 auto; width: 800px; line-height: 120%;">
-      Rays are fired from the camera out into the scene, bounce around according to physical models, and record when they
-      hit a light source. Whenever anything changes, the scene has to be re-traced (it starts out noisy, but converges
-      to the correct image).
-    </div>
-
-    <div style="position: relative; top: 0; left: 0; margin-top: 20px;">
-      <canvas id="canvas" width="512" height="512"></canvas>
-      <div id="statusContainer"><span id="status">Loading ...</span></div>
-    </div>
-
+    <div id="container-right">
     <div id="controls">
         <div class="h">Movement Controls</div>
         WASD for forwards/backwards/sideways motion, arrow keys to rotate, and Q/E to roll.
@@ -197,22 +192,23 @@
         <button autocomplete="off" type="radio" name="sizeChoice" id="size512Box">512px</button>
         <button autocomplete="off" type="radio" name="sizeChoice" id="size1024Box">1024px</button>
         <div class="h">Future Thoughts</div>
-      <ul>
-        <li>Scale down to other aspect ratios / non-power-of-2-sizes</li>
-        <li>Other tone mapping options (Reinhard)?</li>
-        <li>Filtering to remove aliasing</li>
-        <li>Improved importance sampling</li>
-        <li>Bloom shader (mipmap down, blur with separable kernel at each stage after thresholding for brightness).</li>
-        <li>Variance output (<a href="http://www.johndcook.com/standard_deviation.html">trackable with 2 floats</a>).</li>
-        <li>HDRI export (<a href="http://concord-consortium.github.io/lab/experiments/webgl-gpgpu/webgl.html">floating-point export workaround</a>).</li>
-        <li>Distance fields for water glass (and consider elliptical acceleration). Milk with BSSRDF?</li>
-        <li>Use textures and multi-pass for rendering many-triangled objects.</li>
-        <li>Consider persistent texture for improved PRNG</li>
-        <li>Spectral rendering, consider polarization and thin-film support for realistic camera model (with multipass!)</li>
+        <ul>
+          <li>Scale down to other aspect ratios / non-power-of-2-sizes</li>
+          <li>Other tone mapping options (Reinhard)?</li>
+          <li>Filtering to remove aliasing</li>
+          <li>Improved importance sampling</li>
+          <li>Bloom shader (mipmap down, blur with separable kernel at each stage after thresholding for brightness).</li>
+          <li>Variance output (<a href="http://www.johndcook.com/standard_deviation.html">trackable with 2 floats</a>).</li>
+          <li>HDRI export (<a href="http://concord-consortium.github.io/lab/experiments/webgl-gpgpu/webgl.html">floating-point export workaround</a>).</li>
+          <li>Distance fields for water glass (and consider elliptical acceleration). Milk with BSSRDF?</li>
+          <li>Use textures and multi-pass for rendering many-triangled objects.</li>
+          <li>Consider persistent texture for improved PRNG</li>
+          <li>Spectral rendering, consider polarization and thin-film support for realistic camera model (with multipass!)</li>
         <li>4D experimentation</li>
-      </ul>
+        </ul>
       Like it? Send me your thoughts at <a id="email" href="mailto:jonathan.olson@colorado.edu">jonathan.olson@colorado.edu</a>
     </div>
+  </div>
   </div>
   <script src="../js/main_first.js"></script>
   <script src="../js/tesserace.js"></script>

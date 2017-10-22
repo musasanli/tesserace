@@ -42,14 +42,31 @@
       border-radius: 10px;
     }
 
-    #container {
-      width: 1132px;
-      margin: 0 auto;
-      position: relative;
+    #main-container {
+      top: 50px;
+      left: 100px;
+      right: 100px;
+      position: absolute;
+    }
+
+    #container-left {
+      width: 50%;
+      position: absolute;
       top: 0;
       left: 0;
+      border: 0;
+      padding-top: 23px;
+    }
+
+    #container-right {
+      width: 50%;
+      position: absolute;
+      top: 0;
+      right: 0;
+      border: 0;
     }
 
     html, body {
       font-family: Helvetica, Helvetica Neue, Arial, sans-serif;
     }
+    
