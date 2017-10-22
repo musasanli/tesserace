@@ -48,6 +48,10 @@
       margin-top: 25px !important;
     }
 
+    .inputLabel {
+      margin-top: 25px !important;
+    }
+
     #statusContainer {
       position: absolute;
       left: 0;
@@ -61,8 +65,9 @@
 
     #status {
       padding: 10px;
-      background-color: rgba(255,255,255,0.5);
+      background-color: #888;
       border-radius: 10px;
+      color: yellow;
     }
 
     #main-container {
@@ -111,6 +116,12 @@
 
     li.active>a {
       color: yellow !important;
+    }
+
+    .svgBack {
+      opacity: 0.2;
+      position: fixed;
+      top : 0;
     }
 
     .animate {

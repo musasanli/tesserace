@@ -25,6 +25,7 @@
 </head>
 <body>
   <div id="main-container">
+  <svg class="svgBack" viewBox="0 0 1490 830" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"> <defs></defs> <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"> <g id="Contact-Module" transform="translate(-480.000000, 50.000000)"> <g id="Bottom-shapes"> <g transform="translate(773.000000, 60.000000)"> <path d="M1130.52756,173.987593 C1092.94327,158.429986 1051.74498,149.845379 1008.54311,149.845379 C832.166519,149.845379 689.185044,292.931375 689.185044,469.436895 C689.185044,475.153748 315.728075,341.949569 270.354798,733.143555" id="Oval-160" stroke="#8C70C7" stroke-width="219.1" stroke-linecap="round" transform="translate(700.441180, 441.494467) rotate(204.000000) translate(-700.441180, -441.494467) "></path> <path d="M594.087148,183.945236 C569.291699,173.68143 542.111985,168.017915 513.610453,168.017915 C397.249685,168.017915 302.920645,262.41591 302.920645,378.861738 C302.920645,382.633312 56.5402146,294.754639 26.6061436,552.836696" id="Oval-160" stroke="#44BDC8" stroke-width="70.7" stroke-linecap="round" transform="translate(310.346646, 360.427305) rotate(171.000000) translate(-310.346646, -360.427305) "></path> <ellipse id="Oval" fill="#F7BA49" cx="371.628591" cy="332.613006" rx="61.5759234" ry="61.6209358"></ellipse> </g> </g> </g> </g></svg>
     <div id="container-left">
       <canvas class="shadow" id="canvas" width="700" height="512"></canvas>
       <div id="statusContainer"><span id="status">Loading ...</span></div> 
@@ -37,10 +38,10 @@
     <div id="container-right">
       <div class="sticky-header">
         <ul class="nav nav-tabs nav-justified nav-tab-yellow" >
-        <li class="nav-item active"><a data-toggle="tab" href="#home">Home</a></li>
-        <li class="nav-item "><a data-toggle="tab" href="#menu1">Menu 1</a></li>
-        <li class="nav-item "><a data-toggle="tab" href="#menu2">Menu 2</a></li>
-        <li class="nav-item "><a data-toggle="tab" href="#menu3">Menu 3</a></li>
+        <li class="nav-item active"><a data-toggle="tab" href="#home">Scene/Tone </a></li>
+        <li class="nav-item "><a data-toggle="tab" href="#menu1">Projection/Mouse</a></li>
+        <li class="nav-item "><a data-toggle="tab" href="#menu2">Environment/Size</a></li>
+        <li class="nav-item "><a data-toggle="tab" href="#menu3">Future/Contact</a></li>
         </ul>
       </div> <!-- sticky header end -->
 
@@ -158,7 +159,7 @@
             </div>
           
 
-            <label>
+            <label class="inputLabel">
               <input class="radiobut70" autocomplete="off" type="text" name="customGLSLText" id="customGLSLText" value="pow( abs( 1.0 + sin( 50.0 * asin( rayDir.x ) ) * sin( 50.0 * asin( rayDir.z ) ) ), 7.0 ) * 0.15" style="margin-left: 20px;"></input>
               <button class="btn btn-info inputBut" id="updateCustomGLSLButton">Update</button>
             </label>
