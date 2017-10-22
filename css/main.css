@@ -79,6 +79,14 @@
       border-radius: 10px 10px 0px 0px;
     }
 
+  .sticky-header {
+    position: -webkit-sticky;  
+    position: sticky; 
+    top: 0; 
+    margin-top: 20px; 
+    z-index: 10;
+  }
+
     li.active>a {
       color: yellow !important;
     }
