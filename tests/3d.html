@@ -5,6 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
   <link href="../css/main.css" rel="stylesheet">
   <link href="../css/radiobutton.css" rel="stylesheet">
+  <link href="../css/rangeInputs.css" rel="stylesheet">
   <title>Tesserace 3D Test</title>
   <!-- Can be ordered operations -->
   <script src="../lib/lodash-2.4.1.min.js"></script>
@@ -220,17 +221,25 @@
               <input autocomplete="off" type="radio" name="environmentControl" id="envTest10x"/>
               <label for="envTest10x" class="radiobutDouble">(4096x1024)</label>
             </div>
-          </div>
+         
 
           HDR Skies from <a href="hhttp://www.openfootage.net/">openfootage.net free (attribution) environment maps</a>:
           <div class="radiobut-info">
             <input autocomplete="off" type="radio" name="environmentControl" id="envDusk2048Box"/>
             <label for="envDusk2048Box">Dusk (2048x512)</label>
           </div>
+         </div>
+
           <label for="environmentRotation">Rotation</label>
-          <input autocomplete="off" id="environmentRotationSlider" name="environmentRotation" type="range" min="0" max="360" value="297" step="0.5" />
+          <div class="range range-info">
+          <input autocomplete="off" id="environmentRotationSlider" name="environmentRotation" type="range" min="0" max="360" value="297" step="0.5" onchange="rangeEnvironmentRotation.value=value" />
+          <output id="rangeEnvironmentRotation">297</output>
+          </div>
           <label for="environmentSunStrength">Extra Sun</label>
-          <input autocomplete="off" id="environmentSunStrengthSlider" name="environmentSunStrength" type="range" min="0" max="100" value="0" step="0.5" />
+          <div class="range range-info">
+          <input autocomplete="off" id="environmentSunStrengthSlider" name="environmentSunStrength" type="range" min="0" max="100" value="0" step="0.5" onchange="rangeEnvironmentSunStrength.value=value"/>
+          <output id="rangeEnvironmentSunStrength">0</output>
+          </div>
 
           <div class="h">Size</div>
           <button autocomplete="off" type="radio" name="sizeChoice" id="size256Box">256px</button>
