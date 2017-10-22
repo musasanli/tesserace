@@ -13,6 +13,7 @@
     var oldArray64 = window.Float64Array;
     window.Float64Array = window.Float32Array;
   </script>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet">
   <link href="https://cdn.rawgit.com/band-x-media/SASS-Material-Design-for-Bootstrap/master/dist/material-bootstrap.min.css" rel="stylesheet">
   <script type="text/javascript" src="https://cdn.rawgit.com/band-x-media/SASS-Material-Design-for-Bootstrap/master/dist/material-bootstrap.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
@@ -27,7 +28,11 @@
     <div id="container-left">
       <canvas class="shadow" id="canvas" width="700" height="512"></canvas>
       <div id="statusContainer"><span id="status">Loading ...</span></div> 
-    </div> <!-- container left end -->
+      <div class="movementExp">
+        <h4>Movement Controls</h2>
+        <h5> WASD for forwards/backwards/sideways motion, arrow keys to rotate, and Q/E to roll.</h3>
+      </div> 
+    </div><!-- container left end -->
 
     <div id="container-right">
       <div class="sticky-header">
@@ -42,8 +47,7 @@
     <div class="tab-content">
       <div id="home" class="tab-pane fade in active animate">
         <div id="controls">
-          <div class="neuB">Movement Controls</div>
-          WASD for forwards/backwards/sideways motion, arrow keys to rotate, and Q/E to roll.
+          
           <div class="h">Scene</div>
           <div class="radiobut">
             <div class="radiobut-info">
@@ -80,20 +84,20 @@
           </div>
         </div>
           
-        <label for="brightness">Exposure</label>
+        <p>Exposure:</p>
         <div class="range range-info">
           <input autocomplete="off" id="brightnessSlider" name="brightness" type="range" min="0" max="500" value="100" step="1" onchange="rangeBrightness.value=value"/>
           <output id="rangeBrightness">100</output>
         </div>
 
         <div class="h">Depth of Field </div>
-        (perspective only for now)
-        <label for="dofSpread">Blur Amount</label>
+        <p>(perspective only for now)</p>
+        <p>Blur Amount:</p>
         <div class="range range-info">
           <input autocomplete="off" id="dofSpreadSlider" name="dofSpread" type="range" min="0" max="500" value="0" step="1" onchange="rangeDofSpread.value=value" />
           <output id="rangeDofSpread">0</output>
         </div>
-        <label for="focalLength">Focal Length</label>
+        <p>Focal Length:</p>
         <div class="range range-info">
           <input autocomplete="off" id="focalLengthSlider" name="focalLength" type="range" min="0" max="1000" value="150" step="0.5" onchange="rangeFocalLength.value=value" />
           <output id="rangeFocalLength">150</output>
@@ -159,7 +163,7 @@
               <button class="btn btn-info inputBut" id="updateCustomGLSLButton">Update</button>
             </label>
 
-            HDR Skies downsampled from <a href="http://www.viz-people.com/portfolio/free-hdri-maps/">Vizpeople's free (non-commercial) environment maps</a>:
+            <p>HDR Skies downsampled from <a href="http://www.viz-people.com/portfolio/free-hdri-maps/">Vizpeople's free (non-commercial) environment maps</a>:</p> 
 
             <div class="radiobut-info">
               <input autocomplete="off" type="radio" name="environmentControl" id="envTest01"/>
@@ -223,19 +227,19 @@
             </div>
          
 
-          HDR Skies from <a href="hhttp://www.openfootage.net/">openfootage.net free (attribution) environment maps</a>:
+          <p> HDR Skies from <a href="hhttp://www.openfootage.net/">openfootage.net free (attribution) environment maps</a>:</p>
           <div class="radiobut-info">
             <input autocomplete="off" type="radio" name="environmentControl" id="envDusk2048Box"/>
             <label for="envDusk2048Box">Dusk (2048x512)</label>
           </div>
          </div>
 
-          <label for="environmentRotation">Rotation</label>
+          <p>Rotation:</p>
           <div class="range range-info">
           <input autocomplete="off" id="environmentRotationSlider" name="environmentRotation" type="range" min="0" max="360" value="297" step="0.5" onchange="rangeEnvironmentRotation.value=value" />
           <output id="rangeEnvironmentRotation">297</output>
           </div>
-          <label for="environmentSunStrength">Extra Sun</label>
+          <p>Extra Sun:</p>
           <div class="range range-info">
           <input autocomplete="off" id="environmentSunStrengthSlider" name="environmentSunStrength" type="range" min="0" max="100" value="0" step="0.5" onchange="rangeEnvironmentSunStrength.value=value"/>
           <output id="rangeEnvironmentSunStrength">0</output>
