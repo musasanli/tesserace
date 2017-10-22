@@ -14,6 +14,21 @@
     margin-left: 3% !important;
 }
 
+.radiobut70 {
+    width: 80% !important;
+    margin-left: 0px !important;
+}
+
+.inputBut {
+    width: 19%;
+    margin-top: -2px;
+}
+
+.sizeBut {
+    width: 20%;
+    margin-left: 10%;
+}
+
 .radiobut input[type="radio"]:empty ~ label, .radiobut input[type="checkbox"]:empty ~ label {
     position: relative;
     line-height: 2.5em;
