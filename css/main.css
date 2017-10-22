@@ -1,0 +1,225 @@
+    canvas {
+      width: 700px;
+      height: 512px;
+      background-color: #dedddd;
+      border-radius: 10px;
+      box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+    }
+
+    img.hidden {
+      position: absolute;
+      visibility: hidden;
+      overflow: hidden;
+    }
+
+    #controls {
+      float: left;
+      margin: 10px;
+      font-size: 14px;
+      width: 600px;
+      margin-bottom: 100px;
+    }
+
+    label {
+      font-family: Roboto !important;
+      font-weight: 300 !important;
+    }
+
+    #brightnessSlider, #dofSpreadSlider, #focalLengthSlider, #environmentRotationSlider, #customGLSLText, #environmentSunStrengthSlider {
+      width: 450px;
+    }
+
+    .movementExp {
+      margin-top: 80px;
+      margin-left: 50px;
+      font-family: Roboto;
+      font-weight: 700;
+    }
+
+    .h {
+      font-size: 18px;
+      font-weight: bold;
+      text-align: center;
+      margin-top: 30px;
+      font-family: Roboto;
+      font-weight: 700;
+      color: steelblue;
+    }
+
+    p {
+      margin-top: 25px !important;
+    }
+
+    .inputLabel {
+      margin-top: 25px !important;
+    }
+
+    #statusContainer {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 700px;
+      height: 512px;
+      text-align: center;
+      vertical-align: middle;
+      line-height: 512px;
+    }
+
+    #status {
+      padding: 10px;
+      background-color: #888;
+      border-radius: 10px;
+      color: yellow;
+    }
+
+    #main-container {
+      top: 50px;
+      left: 100px;
+      right: 100px;
+      position: absolute;
+    }
+
+    #container-left {
+      /*width: 100%;*/
+      position: fixed;
+      top: 50;
+      left: 50;
+      border: 0;
+      padding-top: 23px;
+    }
+
+    .canvasDiv {
+      position: relative; 
+      top: 0; 
+      left: 0; 
+      margin-top: 20px;
+    }
+
+    #container-right {
+      /*width: 100%;*/
+      position: absolute;
+      top: 0;
+      right: 0;
+      border: 0;
+    }
+
+    .nav {
+      background-color: #00bcd4 !important;
+      border-radius: 10px 10px 0px 0px;
+    }
+
+    .sticky-header {
+      position: -webkit-sticky;  
+      position: sticky; 
+      top: 0; 
+      margin-top: 20px; 
+      z-index: 10;
+    }
+
+    li.active>a {
+      color: yellow !important;
+    }
+
+    .svgBack {
+      opacity: 0.2;
+      position: fixed;
+      top : 0;
+    }
+
+    .animate {
+      position: relative;
+      -webkit-animation-name: example !important; /* Safari 4.0 - 8.0 */
+      -webkit-animation-duration: 2s !important; /* Safari 4.0 - 8.0 */
+      animation-name: example !important;
+      animation-duration: 2s !important;
+    }
+
+    /* Safari 4.0 - 8.0 */
+    @-webkit-keyframes example {
+        25%   { left:0px; top:0px;}
+        0%  { left:200px; top:0px;}
+    }
+
+    /* Standard syntax */
+    @keyframes example {
+        25%   { left:0px; top:0px;}
+        0%  { left:200px; top:0px;}
+    }
+
+    html, body {
+      font-family: Helvetica, Helvetica Neue, Arial, sans-serif;
+    }
+
+        @media all and (max-width: 1575px) {
+      #canvas {
+        width: 500px;
+        height: 412px;
+      }
+      #statusContainer {
+      width: 500px;
+      height: 412px;
+    }
+    }
+
+    @media all and (max-width: 1450px) {
+      .nav {
+        width: 103% !important;
+      }
+    }
+
+    @media all and (max-width: 1400px) {
+      .nav {
+        width: 106% !important;
+      }
+    }
+
+    @media all and (max-width: 1350px) {
+      .nav {
+        width: 111% !important;
+      }
+    }
+
+    @media all and (max-width: 1300px) {
+      .nav {
+        width: 117% !important;
+      }
+    }
+
+    @media all and (max-width: 1200px) {
+      .nav {
+        width: 100% !important;
+      }
+      .nav-item{
+        width: 25% !important;
+      }
+      .nav>li>a {
+        padding: 10px 45px !important;
+      }
+      #container-right {
+        top: 550px;
+      }
+      #container-left {
+        position: relative;
+      }
+      #canvas {
+        width: 100%;
+      }
+      #statusContainer {
+        width: 100%
+      }
+      .movementExp {
+        margin-top: 40px;
+      }
+
+    }
+
+    @media all and (min-width: 1575px) {
+      .nav-item{
+        width: 25% !important;
+      }
+      .nav>li>a {
+      padding: 10px 45px !important;
+      }
+    }
+
+    
