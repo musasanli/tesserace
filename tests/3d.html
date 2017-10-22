@@ -23,182 +23,226 @@
 <body>
   <div id="main-container">
     <div id="container-left">
-        <canvas class="shadow" id="canvas" width="700" height="512"></canvas>
-        <div id="statusContainer"><span id="status">Loading ...</span></div> 
-  </div>
+      <canvas class="shadow" id="canvas" width="700" height="512"></canvas>
+      <div id="statusContainer"><span id="status">Loading ...</span></div> 
+    </div> <!-- container left end -->
 
     <div id="container-right">
-    <div class="sticky-header">
-      <ul class="nav nav-tabs nav-justified nav-tab-yellow" >
-      <li class="nav-item active"><a data-toggle="tab" href="#home">Home</a></li>
-      <li class="nav-item "><a data-toggle="tab" href="#menu1">Menu 1</a></li>
-      <li class="nav-item "><a data-toggle="tab" href="#menu2">Menu 2</a></li>
-      <li class="nav-item "><a data-toggle="tab" href="#menu3">Menu 3</a></li>
-      </ul>
-    </div>
-    <div id="controls">
-        <div class="h">Movement Controls</div>
-        WASD for forwards/backwards/sideways motion, arrow keys to rotate, and Q/E to roll.
-        <div class="h">Scene</div>
-        <label for="sceneCoffeeBox">
-          <input autocomplete="off" type="radio" name="sceneChoice" id="sceneCoffeeBox" checked>Outdoors</input>
-        </label>
-        <label for="sceneIndoorBox">
-          <input autocomplete="off" type="radio" name="sceneChoice" id="sceneIndoorBox">Indoors</input>
-        </label>
-        <label for="sceneColorBox">
-          <input autocomplete="off" type="radio" name="sceneChoice" id="sceneColorBox">Color and Caustics</input>
-        </label>
-        <label for="sceneTestBox">
-          <input autocomplete="off" type="radio" name="sceneChoice" id="sceneTestBox">Distance Field Experiment (slow!)</input>
-        </label>
+      <div class="sticky-header">
+        <ul class="nav nav-tabs nav-justified nav-tab-yellow" >
+        <li class="nav-item active"><a data-toggle="tab" href="#home">Home</a></li>
+        <li class="nav-item "><a data-toggle="tab" href="#menu1">Menu 1</a></li>
+        <li class="nav-item "><a data-toggle="tab" href="#menu2">Menu 2</a></li>
+        <li class="nav-item "><a data-toggle="tab" href="#menu3">Menu 3</a></li>
+        </ul>
+      </div> <!-- sticky header end -->
+
+    <div class="tab-content">
+      <div id="home" class="tab-pane fade in active animate">
+        <div id="controls">
+          <div class="neuB">Movement Controls</div>
+          WASD for forwards/backwards/sideways motion, arrow keys to rotate, and Q/E to roll.
+          <div class="h">Scene</div>
+          <div class="radiobut">
+            <div class="radiobut-info">
+              <input autocomplete="off" type="radio" name="sceneChoice" id="sceneCoffeeBox" checked />
+              <label for="sceneCoffeeBox">Outdoors</label>
+            </div>
+            <div class="radiobut-info">
+              <input autocomplete="off" type="radio" name="sceneChoice" id="sceneIndoorBox" />
+              <label for="sceneIndoorBox">Indoors</label>
+            </div>
+            <div class="radiobut-info">
+              <input autocomplete="off" type="radio" name="sceneChoice" id="sceneColorBox" />
+              <label for="sceneColorBox">Color and Caustics</label>
+            </div>
+            <div class="radiobut-info">
+                <input autocomplete="off" type="radio" name="sceneChoice" id="sceneTestBox" />
+                <label for="sceneTestBox">Distance Field Experiment (slow!)</label>
+            </div>
+        </div>
+        
         <div class="h">Tone Mapping</div>
-        <label for="linearBox">
-          <input autocomplete="off" type="radio" name="toneMap" id="linearBox" checked>Linear</input>
-        </label>
-        <label for="reinhardBox">
-          <input autocomplete="off" type="radio" name="toneMap" id="reinhardBox">Reinhard</input>
-        </label>
-        <label for="filmicBox">
-          <input autocomplete="off" type="radio" name="toneMap" id="filmicBox">Filmic</input>
-        </label>
-        <br>
+        <div class="radiobut">
+          <div class="radiobut-info">
+              <input autocomplete="off" type="radio" name="toneMap" id="linearBox" checked />
+              <label for="linearBox">Linear</label>
+          </div>
+          <div class="radiobut-info">
+            <input autocomplete="off" type="radio" name="toneMap" id="reinhardBox" />
+            <label for="reinhardBox">Reinhard</label>
+          </div>
+          <div class="radiobut-info">
+            <input autocomplete="off" type="radio" name="toneMap" id="filmicBox" />
+            <label for="filmicBox">Filmic</label>
+          </div>
+        </div>
+          
         <label for="brightness">Exposure</label>
-        <input autocomplete="off" id="brightnessSlider" name="brightness" type="range" min="0" max="500" value="100" step="1" />
-        <div class="h">Depth of Field</div>
-        (perspective only for now)<br>
+        <div class="range range-info">
+          <input autocomplete="off" id="brightnessSlider" name="brightness" type="range" min="0" max="500" value="100" step="1" onchange="rangeBrightness.value=value"/>
+          <output id="rangeBrightness">100</output>
+        </div>
+
+        <div class="h">Depth of Field </div>
+        (perspective only for now)
         <label for="dofSpread">Blur Amount</label>
-        <input autocomplete="off" id="dofSpreadSlider" name="dofSpread" type="range" min="0" max="500" value="0" step="1" />
-        <br>
+        <div class="range range-info">
+          <input autocomplete="off" id="dofSpreadSlider" name="dofSpread" type="range" min="0" max="500" value="0" step="1" onchange="rangeDofSpread.value=value" />
+          <output id="rangeDofSpread">0</output>
+        </div>
         <label for="focalLength">Focal Length</label>
-        <input autocomplete="off" id="focalLengthSlider" name="focalLength" type="range" min="0" max="1000" value="150" step="0.5" />
-        <div class="h">Projection</div>
-        <label for="perspectiveBox">
-          <input autocomplete="off" type="radio" name="projection" id="perspectiveBox" checked>Perspective</input>
-        </label>
-        <label for="stereographicBox">
-          <input autocomplete="off" type="radio" name="projection" id="stereographicBox">Stereographic</input>
-        </label>
-        <div class="h">Mouse Control</div>
-        <label for="mouseNoneBox">
-          <input autocomplete="off" type="radio" name="mouseControl" id="mouseNoneBox">Nothing</input>
-        </label>
-        <br>
-        <label for="mouseRotateBox">
-          <input autocomplete="off" type="radio" name="mouseControl" id="mouseRotateBox" checked>Rotate (around focal point)</input>
-        </label>
-        <br>
-        <label for="mouseFocusBox">
-          <input autocomplete="off" type="radio" name="mouseControl" id="mouseFocusBox">Focus on point (when clicked or dragged)</input>
-        </label>
-        <br>
-        <label for="mouseLightBox">
-          <input autocomplete="off" type="radio" name="mouseControl" id="mouseLightBox">Light at point (when clicked or dragged)</input>
-        </label>
-        <br>
-        <label for="mouseMakeDynamicBox">
-          <input autocomplete="off" type="radio" name="mouseControl" id="mouseMakeDynamicBox">Drag spheres (not too many, shader uniforms limited)</input>
-        </label>
-        <div class="h">Environment</div>
-        <label for="envConstantBox">
-          <input autocomplete="off" type="radio" name="environmentControl" id="envConstantBox">Constant (white/gray)</input>
-        </label>
-        <br>
-        <label for="envWeirdBox">
-          <input autocomplete="off" type="radio" name="environmentControl" id="envWeirdBox">Custom GLSL Expression</input>
-          <br>
-          <input autocomplete="off" type="text" name="customGLSLText" id="customGLSLText" value="pow( abs( 1.0 + sin( 50.0 * asin( rayDir.x ) ) * sin( 50.0 * asin( rayDir.z ) ) ), 7.0 ) * 0.15" style="margin-left: 20px;"></input>
-          <button id="updateCustomGLSLButton">Update</button>
-        </label>
-        <br>
-        HDR Skies downsampled from <a href="http://www.viz-people.com/portfolio/free-hdri-maps/">Vizpeople's free (non-commercial) environment maps</a>:
-        <br>
-        <label for="envTest01">
-          <input autocomplete="off" type="radio" name="environmentControl" id="envTest01">Sky 01 (2048x512)</input>
-        </label>
-        <label for="envTest01x">
-          <input autocomplete="off" type="radio" name="environmentControl" id="envTest01x">(4096x1024)</input>
-        </label>
-        <br>
-        <label for="envTest02">
-          <input autocomplete="off" type="radio" name="environmentControl" id="envTest02">Sky 02 (2048x512)</input>
-        </label>
-        <label for="envTest02x">
-          <input autocomplete="off" type="radio" name="environmentControl" id="envTest02x">(4096x1024)</input>
-        </label>
-        <br>
-        <label for="envTest03">
-          <input autocomplete="off" type="radio" name="environmentControl" id="envTest03">Sky 03 (2048x512)</input>
-        </label>
-        <label for="envTest03x">
-          <input autocomplete="off" type="radio" name="environmentControl" id="envTest03x">(4096x1024)</input>
-        </label>
-        <br>
-        <label for="envTest04">
-          <input autocomplete="off" type="radio" name="environmentControl" id="envTest04" checked>Sky 04 (2048x512)</input>
-        </label>
-        <label for="envTest04x">
-          <input autocomplete="off" type="radio" name="environmentControl" id="envTest04x">(4096x1024)</input>
-        </label>
-        <br>
-        <label for="envTest05">
-          <input autocomplete="off" type="radio" name="environmentControl" id="envTest05">Sky 05 (2048x512)</input>
-        </label>
-        <label for="envTest05x">
-          <input autocomplete="off" type="radio" name="environmentControl" id="envTest05x">(4096x1024)</input>
-        </label>
-        <br>
-        <label for="envTest06">
-          <input autocomplete="off" type="radio" name="environmentControl" id="envTest06">Sky 06 (2048x512)</input>
-        </label>
-        <label for="envTest06x">
-          <input autocomplete="off" type="radio" name="environmentControl" id="envTest06x">(4096x1024)</input>
-        </label>
-        <br>
-        <label for="envTest07">
-          <input autocomplete="off" type="radio" name="environmentControl" id="envTest07">Sky 07 (2048x512)</input>
-        </label>
-        <label for="envTest07x">
-          <input autocomplete="off" type="radio" name="environmentControl" id="envTest07x">(4096x1024)</input>
-        </label>
-        <br>
-        <label for="envTest08">
-          <input autocomplete="off" type="radio" name="environmentControl" id="envTest08">Sky 08 (2048x512)</input>
-        </label>
-        <label for="envTest08x">
-          <input autocomplete="off" type="radio" name="environmentControl" id="envTest08x">(4096x1024)</input>
-        </label>
-        <br>
-        <label for="envTest09">
-          <input autocomplete="off" type="radio" name="environmentControl" id="envTest09">Sky 09 (2048x512)</input>
-        </label>
-        <label for="envTest09x">
-          <input autocomplete="off" type="radio" name="environmentControl" id="envTest09x">(4096x1024)</input>
-        </label>
-        <br>
-        <label for="envTest10">
-          <input autocomplete="off" type="radio" name="environmentControl" id="envTest10">Sky 10 (2048x512)</input>
-        </label>
-        <label for="envTest10x">
-          <input autocomplete="off" type="radio" name="environmentControl" id="envTest10x">(4096x1024)</input>
-        </label>
-        <br>
-        HDR Skies from <a href="hhttp://www.openfootage.net/">openfootage.net free (attribution) environment maps</a>:
-        <br>
-        <label for="envDusk2048Box">
-          <input autocomplete="off" type="radio" name="environmentControl" id="envDusk2048Box">Dusk (2048x512)</input>
-        </label>
-        <br>
-        <label for="environmentRotation">Rotation</label>
-        <input autocomplete="off" id="environmentRotationSlider" name="environmentRotation" type="range" min="0" max="360" value="297" step="0.5" />
-        <br>
-        <label for="environmentSunStrength">Extra Sun</label>
-        <input autocomplete="off" id="environmentSunStrengthSlider" name="environmentSunStrength" type="range" min="0" max="100" value="0" step="0.5" />
-        <div class="h">Size</div>
-        <button autocomplete="off" type="radio" name="sizeChoice" id="size256Box">256px</button>
-        <button autocomplete="off" type="radio" name="sizeChoice" id="size512Box">512px</button>
-        <button autocomplete="off" type="radio" name="sizeChoice" id="size1024Box">1024px</button>
-        <div class="h">Future Thoughts</div>
+        <div class="range range-info">
+          <input autocomplete="off" id="focalLengthSlider" name="focalLength" type="range" min="0" max="1000" value="150" step="0.5" onchange="rangeFocalLength.value=value" />
+          <output id="rangeFocalLength">150</output>
+        </div>
+        </div>
+      </div>
+       <!-- home tab end -->
+
+      <div id="menu1" class="tab-pane fade animate">
+        <div id="controls">
+          <div class="h">Projection</div>
+          <div class="radiobut">
+            <div class="radiobut-info">
+              <input autocomplete="off" type="radio" name="projection" id="perspectiveBox" checked />
+              <label for="perspectiveBox">Perspective</label>
+            </div>
+            <div class="radiobut-info">
+              <input autocomplete="off" type="radio" name="projection" id="stereographicBox" />
+              <label for="stereographicBox">Stereographic</label>
+            </div>
+            <div class="h">Mouse Control</div>
+            <div class="radiobut-info">
+              <input autocomplete="off" type="radio" name="mouseControl" id="mouseNoneBox" />
+              <label for="mouseNoneBox">Nothing</label>
+            </div>
+            <div class="radiobut-info">
+              <input autocomplete="off" type="radio" name="mouseControl" id="mouseRotateBox" checked />
+              <label for="mouseRotateBox">Rotate (around focal point)</label>
+            </div>
+            <div class="radiobut-info">
+              <input autocomplete="off" type="radio" name="mouseControl" id="mouseFocusBox" />
+              <label for="mouseFocusBox">Focus on point (when clicked or dragged)</label>
+            </div>
+            <div class="radiobut-info">
+              <input autocomplete="off" type="radio" name="mouseControl" id="mouseLightBox" />
+              <label for="mouseLightBox">Light at point (when clicked or dragged)</label>
+            </div>
+            <div class="radiobut-info">
+              <input autocomplete="off" type="radio" name="mouseControl" id="mouseMakeDynamicBox" />
+              <label for="mouseMakeDynamicBox">Drag spheres (not too many, shader uniforms limited)</label>
+            </div>
+          </div>
+        </div>
+      </div> 
+      <!-- menu1 tab end -->
+
+      <div id="menu2" class="tab-pane fade animate">
+        <div id="controls">
+          <div class="h">Environment</div>
+          <div class="radiobut">
+            <div class="radiobut-info">
+              <input autocomplete="off" type="radio" name="environmentControl" id="envConstantBox" />
+              <label for="envConstantBox">Constant (white/gray)</label>
+            </div>
+            <div class="radiobut-info">
+              <input autocomplete="off" type="radio" name="environmentControl" id="envWeirdBox" />
+              <label for="envWeirdBox">Custom GLSL Expression</label>
+            </div>
+          
+
+            <label>
+              <input autocomplete="off" type="text" name="customGLSLText" id="customGLSLText" value="pow( abs( 1.0 + sin( 50.0 * asin( rayDir.x ) ) * sin( 50.0 * asin( rayDir.z ) ) ), 7.0 ) * 0.15" style="margin-left: 20px;"></input>
+              <button id="updateCustomGLSLButton">Update</button>
+            </label>
+
+            HDR Skies downsampled from <a href="http://www.viz-people.com/portfolio/free-hdri-maps/">Vizpeople's free (non-commercial) environment maps</a>:
+
+            <div class="radiobut-info">
+              <input autocomplete="off" type="radio" name="environmentControl" id="envTest01"/>
+              <label for="envTest01">Sky 01 (2048x512)</label>
+              <input autocomplete="off" type="radio" name="environmentControl" id="envTest01x"/>
+              <label for="envTest01x">(4096x1024)</label>
+            </div>
+            <div class="radiobut-info">
+              <input autocomplete="off" type="radio" name="environmentControl" id="envTest02"/>
+              <label for="envTest02">Sky 02 (2048x512)</label>
+              <input autocomplete="off" type="radio" name="environmentControl" id="envTest02x"/>
+              <label for="envTest02x">(4096x1024)</label>
+            </div>
+            <div class="radiobut-info">
+              <input autocomplete="off" type="radio" name="environmentControl" id="envTest03"/>
+              <label for="envTest03">Sky 03 (2048x512)</label>
+              <input autocomplete="off" type="radio" name="environmentControl" id="envTest03x"/>
+              <label for="envTest03x">(4096x1024)</label>
+            </div>
+            <div class="radiobut-info">
+              <input autocomplete="off" type="radio" name="environmentControl" id="envTest04" checked/>
+              <label for="envTest04">Sky 04 (2048x512)</label>
+              <input autocomplete="off" type="radio" name="environmentControl" id="envTest04x"/>
+              <label for="envTest04x">(4096x1024)</label>
+            </div>
+            <div class="radiobut-info">
+              <input autocomplete="off" type="radio" name="environmentControl" id="envTest05"/>
+              <label for="envTest05">Sky 05 (2048x512)</label>
+              <input autocomplete="off" type="radio" name="environmentControl" id="envTest05x"/>
+              <label for="envTest05x">(4096x1024)</label>
+            </div>
+            <div class="radiobut-info">
+              <input autocomplete="off" type="radio" name="environmentControl" id="envTest06"/>
+              <label for="envTest06">Sky 06 (2048x512)</label>
+              <input autocomplete="off" type="radio" name="environmentControl" id="envTest06x"/>
+              <label for="envTest06x">(4096x1024)</label>
+            </div>
+            <div class="radiobut-info">
+              <input autocomplete="off" type="radio" name="environmentControl" id="envTest07"/>
+              <label for="envTest07">Sky 07 (2048x512)</label>
+              <input autocomplete="off" type="radio" name="environmentControl" id="envTest07x"/>
+              <label for="envTest07x">(4096x1024)</label>
+            </div>
+            <div class="radiobut-info">
+              <input autocomplete="off" type="radio" name="environmentControl" id="envTest08"/>
+              <label for="envTest08">Sky 08 (2048x512)</label>
+              <input autocomplete="off" type="radio" name="environmentControl" id="envTest08x"/>
+              <label for="envTest08x">(4096x1024)</label>
+            </div>
+            <div class="radiobut-info">
+              <input autocomplete="off" type="radio" name="environmentControl" id="envTest09"/>
+              <label for="envTest09">Sky 09 (2048x512)</label>
+              <input autocomplete="off" type="radio" name="environmentControl" id="envTest09x"/>
+              <label for="envTest09x">(4096x1024)</label>
+            </div>
+            <div class="radiobut-info">
+              <input autocomplete="off" type="radio" name="environmentControl" id="envTest10"/>
+              <label for="envTest10">Sky 10 (2048x512)</label>
+              <input autocomplete="off" type="radio" name="environmentControl" id="envTest10x"/>
+              <label for="envTest10x">(4096x1024)</label>
+            </div>
+          </div>
+
+          HDR Skies from <a href="hhttp://www.openfootage.net/">openfootage.net free (attribution) environment maps</a>:
+          <div class="radiobut-info">
+            <input autocomplete="off" type="radio" name="environmentControl" id="envDusk2048Box"/>
+            <label for="envDusk2048Box">Dusk (2048x512)</label>
+          </div>
+          <label for="environmentRotation">Rotation</label>
+          <input autocomplete="off" id="environmentRotationSlider" name="environmentRotation" type="range" min="0" max="360" value="297" step="0.5" />
+          <label for="environmentSunStrength">Extra Sun</label>
+          <input autocomplete="off" id="environmentSunStrengthSlider" name="environmentSunStrength" type="range" min="0" max="100" value="0" step="0.5" />
+
+          <div class="h">Size</div>
+          <button autocomplete="off" type="radio" name="sizeChoice" id="size256Box">256px</button>
+          <button autocomplete="off" type="radio" name="sizeChoice" id="size512Box">512px</button>
+          <button autocomplete="off" type="radio" name="sizeChoice" id="size1024Box">1024px</button>
+        </div>
+      </div>
+      <!-- menu2 tab end -->
+
+      <div id="menu3" class="tab-pane fade animate">
+          <div id="controls">
+          
+          <div class="h">Future Thoughts</div>
         <ul>
           <li>Scale down to other aspect ratios / non-power-of-2-sizes</li>
           <li>Other tone mapping options (Reinhard)?</li>
@@ -211,12 +255,16 @@
           <li>Use textures and multi-pass for rendering many-triangled objects.</li>
           <li>Consider persistent texture for improved PRNG</li>
           <li>Spectral rendering, consider polarization and thin-film support for realistic camera model (with multipass!)</li>
-        <li>4D experimentation</li>
+          <li>4D experimentation</li>
         </ul>
-      Like it? Send me your thoughts at <a id="email" href="mailto:jonathan.olson@colorado.edu">jonathan.olson@colorado.edu</a>
-    </div>
-  </div>
-  </div>
+        Like it? Send me your thoughts at <a id="email" href="mailto:jonathan.olson@colorado.edu">jonathan.olson@colorado.edu</a>
+
+      </div>
+      </div>
+    </div> <!-- tab content end -->
+
+    </div> <!-- container right end -->
+  </div> <!-- main container end -->
   <script src="../js/main_first.js"></script>
   <script src="../js/tesserace.js"></script>
   <script src="../js/snippets.js"></script>
