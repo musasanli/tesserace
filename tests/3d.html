@@ -26,8 +26,9 @@
 <body>
   <div id="main-container">
   <svg class="svgBack" viewBox="0 0 1490 830" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"> <defs></defs> <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"> <g id="Contact-Module" transform="translate(-480.000000, 50.000000)"> <g id="Bottom-shapes"> <g transform="translate(773.000000, 60.000000)"> <path d="M1130.52756,173.987593 C1092.94327,158.429986 1051.74498,149.845379 1008.54311,149.845379 C832.166519,149.845379 689.185044,292.931375 689.185044,469.436895 C689.185044,475.153748 315.728075,341.949569 270.354798,733.143555" id="Oval-160" stroke="#8C70C7" stroke-width="219.1" stroke-linecap="round" transform="translate(700.441180, 441.494467) rotate(204.000000) translate(-700.441180, -441.494467) "></path> <path d="M594.087148,183.945236 C569.291699,173.68143 542.111985,168.017915 513.610453,168.017915 C397.249685,168.017915 302.920645,262.41591 302.920645,378.861738 C302.920645,382.633312 56.5402146,294.754639 26.6061436,552.836696" id="Oval-160" stroke="#44BDC8" stroke-width="70.7" stroke-linecap="round" transform="translate(310.346646, 360.427305) rotate(171.000000) translate(-310.346646, -360.427305) "></path> <ellipse id="Oval" fill="#F7BA49" cx="371.628591" cy="332.613006" rx="61.5759234" ry="61.6209358"></ellipse> </g> </g> </g> </g></svg>
-    <div id="container-left">
-      <canvas class="shadow" id="canvas" width="700" height="512"></canvas>
+    <div class="row">
+    <div id="container-left"  class="col-xs-12 col-sm-12 col-md-12 col-lg-6 ">
+      <canvas class="shadow" id="canvas"></canvas>
       <div id="statusContainer"><span id="status">Loading ...</span></div> 
       <div class="movementExp">
         <h4>Movement Controls</h2>
@@ -35,20 +36,19 @@
       </div> 
     </div><!-- container left end -->
 
-    <div id="container-right">
+    <div id="container-right" class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
       <div class="sticky-header">
-        <ul class="nav nav-tabs nav-justified nav-tab-yellow" >
-        <li class="nav-item active"><a data-toggle="tab" href="#home">Scene/Tone </a></li>
-        <li class="nav-item "><a data-toggle="tab" href="#menu1">Projection/Mouse</a></li>
-        <li class="nav-item "><a data-toggle="tab" href="#menu2">Environment/Size</a></li>
-        <li class="nav-item "><a data-toggle="tab" href="#menu3">Future/Contact</a></li>
+        <ul class="nav nav-tabs nav-tab-yellow" >
+        <li class="nav-item active col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-3"><a data-toggle="tab" href="#home">Menu 1</a></li>
+        <li class="nav-item col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-3"><a data-toggle="tab" href="#menu1">Menu 2</a></li>
+        <li class="nav-item col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-3"><a data-toggle="tab" href="#menu2">Menu 3</a></li>
+        <li class="nav-item col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-3"><a data-toggle="tab" href="#menu3">Menu 4</a></li>
         </ul>
       </div> <!-- sticky header end -->
 
     <div class="tab-content">
       <div id="home" class="tab-pane fade in active animate">
         <div id="controls">
-          
           <div class="h">Scene</div>
           <div class="radiobut">
             <div class="radiobut-info">
@@ -67,42 +67,42 @@
                 <input autocomplete="off" type="radio" name="sceneChoice" id="sceneTestBox" />
                 <label for="sceneTestBox">Distance Field Experiment (slow!)</label>
             </div>
-        </div>
+          </div>
         
-        <div class="h">Tone Mapping</div>
-        <div class="radiobut">
-          <div class="radiobut-info">
+          <div class="h">Tone Mapping</div>
+          <div class="radiobut">
+            <div class="radiobut-info">
               <input autocomplete="off" type="radio" name="toneMap" id="linearBox" checked />
               <label for="linearBox">Linear</label>
+            </div>
+            <div class="radiobut-info">
+             <input autocomplete="off" type="radio" name="toneMap" id="reinhardBox" />
+             <label for="reinhardBox">Reinhard</label>
+            </div>
+            <div class="radiobut-info">
+              <input autocomplete="off" type="radio" name="toneMap" id="filmicBox" />
+              <label for="filmicBox">Filmic</label>
+            </div>
           </div>
-          <div class="radiobut-info">
-            <input autocomplete="off" type="radio" name="toneMap" id="reinhardBox" />
-            <label for="reinhardBox">Reinhard</label>
-          </div>
-          <div class="radiobut-info">
-            <input autocomplete="off" type="radio" name="toneMap" id="filmicBox" />
-            <label for="filmicBox">Filmic</label>
-          </div>
-        </div>
           
-        <p>Exposure:</p>
-        <div class="range range-info">
-          <input autocomplete="off" id="brightnessSlider" name="brightness" type="range" min="0" max="500" value="100" step="1" onchange="rangeBrightness.value=value"/>
-          <output id="rangeBrightness">100</output>
-        </div>
+          <p>Exposure:</p>
+          <div class="range range-info">
+            <input autocomplete="off" id="brightnessSlider" name="brightness" type="range" min="0" max="500" value="100" step="1" onchange="rangeBrightness.value=value"/>
+            <output id="rangeBrightness">100</output>
+          </div>
 
-        <div class="h">Depth of Field </div>
-        <p>(perspective only for now)</p>
-        <p>Blur Amount:</p>
-        <div class="range range-info">
-          <input autocomplete="off" id="dofSpreadSlider" name="dofSpread" type="range" min="0" max="500" value="0" step="1" onchange="rangeDofSpread.value=value" />
-          <output id="rangeDofSpread">0</output>
-        </div>
-        <p>Focal Length:</p>
-        <div class="range range-info">
-          <input autocomplete="off" id="focalLengthSlider" name="focalLength" type="range" min="0" max="1000" value="150" step="0.5" onchange="rangeFocalLength.value=value" />
-          <output id="rangeFocalLength">150</output>
-        </div>
+          <div class="h">Depth of Field </div>
+          <p>(perspective only for now)</p>
+          <p>Blur Amount:</p>
+          <div class="range range-info">
+            <input autocomplete="off" id="dofSpreadSlider" name="dofSpread" type="range" min="0" max="500" value="0" step="1" onchange="rangeDofSpread.value=value" />
+            <output id="rangeDofSpread">0</output>
+          </div>
+          <p>Focal Length:</p>
+          <div class="range range-info">
+            <input autocomplete="off" id="focalLengthSlider" name="focalLength" type="range" min="0" max="1000" value="150" step="0.5" onchange="rangeFocalLength.value=value" />
+            <output id="rangeFocalLength">150</output>
+          </div>
         </div>
       </div>
        <!-- home tab end -->
@@ -255,30 +255,29 @@
       <!-- menu2 tab end -->
 
       <div id="menu3" class="tab-pane fade animate">
-          <div id="controls">
-          
+        <div id="controls">
           <div class="h">Future Thoughts</div>
-        <ul>
-          <li>Scale down to other aspect ratios / non-power-of-2-sizes</li>
-          <li>Other tone mapping options (Reinhard)?</li>
-          <li>Filtering to remove aliasing</li>
-          <li>Improved importance sampling</li>
-          <li>Bloom shader (mipmap down, blur with separable kernel at each stage after thresholding for brightness).</li>
-          <li>Variance output (<a href="http://www.johndcook.com/standard_deviation.html">trackable with 2 floats</a>).</li>
-          <li>HDRI export (<a href="http://concord-consortium.github.io/lab/experiments/webgl-gpgpu/webgl.html">floating-point export workaround</a>).</li>
-          <li>Distance fields for water glass (and consider elliptical acceleration). Milk with BSSRDF?</li>
-          <li>Use textures and multi-pass for rendering many-triangled objects.</li>
-          <li>Consider persistent texture for improved PRNG</li>
-          <li>Spectral rendering, consider polarization and thin-film support for realistic camera model (with multipass!)</li>
-          <li>4D experimentation</li>
-        </ul>
-        Like it? Send me your thoughts at <a id="email" href="mailto:jonathan.olson@colorado.edu">jonathan.olson@colorado.edu</a>
-
-      </div>
-      </div>
+          <ul>
+            <li>Scale down to other aspect ratios / non-power-of-2-sizes</li>
+            <li>Other tone mapping options (Reinhard)?</li>
+            <li>Filtering to remove aliasing</li>
+            <li>Improved importance sampling</li>
+            <li>Bloom shader (mipmap down, blur with separable kernel at each stage after thresholding for brightness).</li>
+            <li>Variance output (<a href="http://www.johndcook.com/standard_deviation.html">trackable with 2 floats</a>).</li>
+            <li>HDRI export (<a href="http://concord-consortium.github.io/lab/experiments/webgl-gpgpu/webgl.html">floating-point export workaround</a>).</li>
+            <li>Distance fields for water glass (and consider elliptical acceleration). Milk with BSSRDF?</li>
+            <li>Use textures and multi-pass for rendering many-triangled objects.</li>
+            <li>Consider persistent texture for improved PRNG</li>
+            <li>Spectral rendering, consider polarization and thin-film support for realistic camera model (with multipass!)</li>
+            <li>4D experimentation</li>
+          </ul>
+          <p>Like it? Send me your thoughts at <a id="email" href="mailto:jonathan.olson@colorado.edu">jonathan.olson@colorado.edu</a></p>
+        </div>
+      </div> <!-- menu3 tab end -->
     </div> <!-- tab content end -->
 
     </div> <!-- container right end -->
+    </div> <!-- row div end -->
   </div> <!-- main container end -->
   <script src="../js/main_first.js"></script>
   <script src="../js/tesserace.js"></script>

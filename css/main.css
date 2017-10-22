@@ -1,4 +1,6 @@
     canvas {
+      width: 700px;
+      height: 512px;
       background-color: #dedddd;
       border-radius: 10px;
       box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
@@ -78,7 +80,7 @@
     }
 
     #container-left {
-      width: 50%;
+      /*width: 100%;*/
       position: fixed;
       top: 50;
       left: 50;
@@ -94,7 +96,7 @@
     }
 
     #container-right {
-      width: 50%;
+      /*width: 100%;*/
       position: absolute;
       top: 0;
       right: 0;
@@ -147,4 +149,77 @@
     html, body {
       font-family: Helvetica, Helvetica Neue, Arial, sans-serif;
     }
+
+        @media all and (max-width: 1575px) {
+      #canvas {
+        width: 500px;
+        height: 412px;
+      }
+      #statusContainer {
+      width: 500px;
+      height: 412px;
+    }
+    }
+
+    @media all and (max-width: 1450px) {
+      .nav {
+        width: 103% !important;
+      }
+    }
+
+    @media all and (max-width: 1400px) {
+      .nav {
+        width: 106% !important;
+      }
+    }
+
+    @media all and (max-width: 1350px) {
+      .nav {
+        width: 111% !important;
+      }
+    }
+
+    @media all and (max-width: 1300px) {
+      .nav {
+        width: 117% !important;
+      }
+    }
+
+    @media all and (max-width: 1200px) {
+      .nav {
+        width: 100% !important;
+      }
+      .nav-item{
+        width: 25% !important;
+      }
+      .nav>li>a {
+        padding: 10px 45px !important;
+      }
+      #container-right {
+        top: 550px;
+      }
+      #container-left {
+        position: relative;
+      }
+      #canvas {
+        width: 100%;
+      }
+      #statusContainer {
+        width: 100%
+      }
+      .movementExp {
+        margin-top: 40px;
+      }
+
+    }
+
+    @media all and (min-width: 1575px) {
+      .nav-item{
+        width: 25% !important;
+      }
+      .nav>li>a {
+      padding: 10px 45px !important;
+      }
+    }
+
     
