@@ -11,6 +11,7 @@
     var oldArray64 = window.Float64Array;
     window.Float64Array = window.Float32Array;
   </script>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet">
   <link href="https://cdn.rawgit.com/band-x-media/SASS-Material-Design-for-Bootstrap/master/dist/material-bootstrap.min.css" rel="stylesheet">
   <script type="text/javascript" src="https://cdn.rawgit.com/band-x-media/SASS-Material-Design-for-Bootstrap/master/dist/material-bootstrap.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
@@ -25,6 +26,8 @@
     <div id="container-left">
       <canvas class="shadow" id="canvas" width="700" height="512"></canvas>
       <div id="statusContainer"><span id="status">Loading ...</span></div> 
+      <div class="neuB">Movement Controls</div>
+          WASD for forwards/backwards/sideways motion, arrow keys to rotate, and Q/E to roll.
     </div> <!-- container left end -->
 
     <div id="container-right">
@@ -40,8 +43,7 @@
     <div class="tab-content">
       <div id="home" class="tab-pane fade in active animate">
         <div id="controls">
-          <div class="neuB">Movement Controls</div>
-          WASD for forwards/backwards/sideways motion, arrow keys to rotate, and Q/E to roll.
+          
           <div class="h">Scene</div>
           <div class="radiobut">
             <div class="radiobut-info">

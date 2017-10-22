@@ -17,6 +17,11 @@
       width: 600px;
     }
 
+    label {
+      font-family: Roboto !important;
+      font-weight: 300 !important;
+    }
+
     #brightnessSlider, #dofSpreadSlider, #focalLengthSlider, #environmentRotationSlider, #customGLSLText, #environmentSunStrengthSlider {
       width: 450px;
     }
@@ -24,6 +29,10 @@
     .h {
       font-size: 18px;
       font-weight: bold;
+      margin-top: 30px;
+      font-family: Roboto;
+      font-weight: 700;
+      color: steelblue;
     }
 
     #statusContainer {
