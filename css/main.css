@@ -74,6 +74,15 @@
       border: 0;
     }
 
+    .nav {
+      background-color: #00bcd4 !important;
+      border-radius: 10px 10px 0px 0px;
+    }
+
+    li.active>a {
+      color: yellow !important;
+    }
+
     html, body {
       font-family: Helvetica, Helvetica Neue, Arial, sans-serif;
     }

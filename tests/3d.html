@@ -11,6 +11,9 @@
     var oldArray64 = window.Float64Array;
     window.Float64Array = window.Float32Array;
   </script>
+  <link href="https://cdn.rawgit.com/band-x-media/SASS-Material-Design-for-Bootstrap/master/dist/material-bootstrap.min.css" rel="stylesheet">
+  <script type="text/javascript" src="https://cdn.rawgit.com/band-x-media/SASS-Material-Design-for-Bootstrap/master/dist/material-bootstrap.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
   <script src="../lib/dot.min.js"></script>
   <script type="text/javascript">
     window.Float64Array = oldArray64;
@@ -25,6 +28,14 @@
   </div>
 
     <div id="container-right">
+    <div class="sticky-header">
+      <ul class="nav nav-tabs nav-justified nav-tab-yellow" >
+      <li class="nav-item active"><a data-toggle="tab" href="#home">Home</a></li>
+      <li class="nav-item "><a data-toggle="tab" href="#menu1">Menu 1</a></li>
+      <li class="nav-item "><a data-toggle="tab" href="#menu2">Menu 2</a></li>
+      <li class="nav-item "><a data-toggle="tab" href="#menu3">Menu 3</a></li>
+      </ul>
+    </div>
     <div id="controls">
         <div class="h">Movement Controls</div>
         WASD for forwards/backwards/sideways motion, arrow keys to rotate, and Q/E to roll.
